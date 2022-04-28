@@ -365,6 +365,7 @@ class TransformerEncoder(FairseqEncoder):
         self.embed_tokens = embed_tokens
 
         self.embed_scale = 1.0 if args.no_scale_embedding else math.sqrt(embed_dim)
+        self.embed_positions = None
 
 #         self.embed_positions = (
 #             PositionalEmbedding(
