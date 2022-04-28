@@ -194,6 +194,10 @@ class TranslationConfig(FairseqDataclass):
             "argparse_alias": "-t",
         },
     )
+    tokens_per_sample: int = field(
+        default=1024,
+        metadata={"help": "max number of tokens per sample for LM dataset"},
+    )
     load_alignments: bool = field(
         default=False, metadata={"help": "load the binarized alignments"}
     )
