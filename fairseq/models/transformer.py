@@ -352,6 +352,7 @@ class TransformerEncoder(FairseqEncoder):
         self.args = args
         super().__init__(dictionary)
         self.register_buffer("version", torch.Tensor([3]))
+        self._future_mask = torch.empty(0)
 
         self.dropout_module = FairseqDropout(
             args.dropout, module_name=self.__class__.__name__
